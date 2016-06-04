@@ -75,7 +75,7 @@ DOCKERIZE =
 # Settings
 #
 
-IMPLS = ada awk bash c d clojure coffee cpp crystal cs erlang elisp \
+IMPLS = ada awk bash basic c d clojure coffee cpp crystal cs erlang elisp \
 	elixir es6 factor forth fsharp go groovy guile haskell haxe \
 	io java julia js kotlin lua make mal ocaml matlab miniMAL \
 	nim objc objpascal perl php plpgsql plsql ps python r racket \
@@ -141,6 +141,7 @@ STEP_TEST_FILES = $(strip $(wildcard \
 ada_STEP_TO_PROG =     ada/$($(1))
 awk_STEP_TO_PROG =     awk/$($(1)).awk
 bash_STEP_TO_PROG =    bash/$($(1)).sh
+basic_STEP_TO_PROG =   basic/$($(1)).bas
 c_STEP_TO_PROG =       c/$($(1))
 d_STEP_TO_PROG =       d/$($(1))
 clojure_STEP_TO_PROG = clojure/target/$($(1)).jar
