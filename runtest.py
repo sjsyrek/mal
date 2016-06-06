@@ -123,6 +123,7 @@ class Runner():
                 new_data = new_data.decode("utf-8") if IS_PY_3 else new_data
                 #print("new_data: '%s'" % new_data)
                 debug(new_data)
+                new_data = new_data
                 if self.no_pty:
                     self.buf += new_data.replace("\n", "\r\n")
                 else:
@@ -135,6 +136,11 @@ class Runner():
                         buf = self.buf[0:end-len(prompt)]
                         self.buf = self.buf[end:]
                         self.last_prompt = prompt
+                        # code to make tests work in BASIC
+                        eol = buf[len(buf) - 1:len(buf)]
+                        if eol == '\r':
+                            buf = buf[0:len(buf) - 1]
+                        # end BASIC code
                         return buf
         return None
 
